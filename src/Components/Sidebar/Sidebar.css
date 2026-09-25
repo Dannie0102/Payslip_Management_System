@@ -1,0 +1,687 @@
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 250px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 25px 15px;
+
+  box-sizing: border-box;
+
+  background: #0f172a;
+  color: #ffffff;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  z-index: 2000;
+
+  transition: transform 0.3s ease;
+}
+
+
+/* =========================================================
+   SIDEBAR SCROLLBAR
+========================================================= */
+
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 10px;
+
+  margin-bottom: 50px;
+}
+
+.logo-icon {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  border-radius: 9px;
+
+  font-size: 19px;
+  font-weight: 700;
+
+  box-shadow:
+    0 4px 10px rgba(37, 99, 235, 0.22);
+}
+
+.sidebar-logo h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 19px;
+  font-weight: 650;
+}
+
+.sidebar-logo span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.sidebar-menu {
+  flex: 1;
+
+  min-height: 0;
+}
+
+.menu-title {
+  padding: 0 12px;
+
+  margin-bottom: 12px;
+
+  color: #94a3b8;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.sidebar-nav {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-list {
+  width: 100%;
+
+  margin: 0 0 6px;
+  padding: 0;
+
+  list-style: none;
+}
+
+.sidebar-list a {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 12px 14px;
+
+  box-sizing: border-box;
+
+  border-radius: 8px;
+
+  color: #cbd5e1;
+
+  font-size: 13.5px;
+  font-weight: 450;
+
+  text-decoration: none;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.sidebar-list a:hover {
+  background: #1e293b;
+
+  color: #ffffff;
+
+  transform: translateX(2px);
+}
+
+.sidebar-list a.active {
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-weight: 650;
+
+  box-shadow:
+    0 4px 12px rgba(37, 99, 235, 0.22);
+}
+
+.sidebar-list a i {
+  width: 18px;
+
+  flex-shrink: 0;
+
+  text-align: center;
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.sidebar-bottom {
+  padding-top: 15px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.12);
+}
+
+.logout {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 11px 14px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: #fca5a5;
+
+  font-size: 13.5px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.logout:hover {
+  background: #7f1d1d;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   MOBILE HEADER
+========================================================= */
+
+.mobile-header {
+  display: none;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.mobile-menu-toggle {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-size: 19px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 3px 8px rgba(37, 99, 235, 0.25);
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.mobile-menu-toggle:hover {
+  background: #1d4ed8;
+}
+
+.mobile-menu-toggle:active {
+  transform: scale(0.94);
+}
+
+
+/* =========================================================
+   MOBILE BRAND
+========================================================= */
+
+.mobile-header-brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.mobile-header-logo {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+.mobile-header-text h2 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+.mobile-header-text span {
+  display: block;
+
+  margin-top: 1px;
+
+  color: #64748b;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.sidebar-close {
+  display: none;
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.sidebar-overlay {
+  display: none;
+}
+
+
+/* =========================================================
+   TABLET - 1100PX
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .sidebar {
+    width: 220px;
+
+    padding: 22px 12px;
+  }
+
+  .sidebar-logo {
+    margin-bottom: 40px;
+  }
+
+  .sidebar-logo h2 {
+    font-size: 18px;
+  }
+
+  .sidebar-list a {
+    gap: 12px;
+
+    padding: 11px 12px;
+
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   SMALL TABLET - 850PX
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .sidebar {
+    width: 200px;
+  }
+
+  .sidebar-logo {
+    gap: 9px;
+
+    padding: 0 7px;
+  }
+
+  .logo-icon {
+    width: 38px;
+    height: 38px;
+
+    font-size: 17px;
+  }
+
+  .sidebar-logo h2 {
+    font-size: 16px;
+  }
+
+  .sidebar-logo span {
+    font-size: 9px;
+  }
+
+  .sidebar-list a {
+    padding: 10px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE - 700PX
+========================================================= */
+
+@media (max-width: 700px) {
+
+  /* -------------------------------------------------------
+     MOBILE HEADER
+  ------------------------------------------------------- */
+
+  .mobile-header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 64px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 0 16px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border-bottom:
+      1px solid #e2e8f0;
+
+    box-shadow:
+      0 2px 10px rgba(15, 23, 42, 0.08);
+
+    z-index: 1500;
+  }
+
+
+  /* -------------------------------------------------------
+     SIDEBAR
+  ------------------------------------------------------- */
+
+  .sidebar {
+    width: 270px;
+
+    height: 100vh;
+
+    padding: 25px 15px;
+
+    transform: translateX(-100%);
+
+    box-shadow:
+      5px 0 25px rgba(15, 23, 42, 0.2);
+
+    z-index: 2000;
+  }
+
+
+  /* -------------------------------------------------------
+     OPEN SIDEBAR
+  ------------------------------------------------------- */
+
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+
+  /* -------------------------------------------------------
+     CLOSE BUTTON
+  ------------------------------------------------------- */
+
+  .sidebar-close {
+    position: absolute;
+
+    top: 18px;
+    right: 15px;
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background:
+      rgba(255, 255, 255, 0.08);
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition:
+      background-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .sidebar-close:hover {
+    background:
+      rgba(255, 255, 255, 0.16);
+
+    transform: rotate(90deg);
+  }
+
+
+  /* -------------------------------------------------------
+     SIDEBAR LOGO
+  ------------------------------------------------------- */
+
+  .sidebar-logo {
+    padding-right: 45px;
+
+    margin-bottom: 45px;
+  }
+
+
+  /* -------------------------------------------------------
+     OVERLAY
+  ------------------------------------------------------- */
+
+  .sidebar-overlay {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    display: block;
+
+    background:
+      rgba(15, 23, 42, 0.55);
+
+    backdrop-filter: blur(2px);
+
+    z-index: 1900;
+  }
+
+
+  /* -------------------------------------------------------
+     MOBILE LINKS
+  ------------------------------------------------------- */
+
+  .sidebar-list a {
+    padding: 13px 14px;
+
+    font-size: 14px;
+
+    gap: 14px;
+  }
+
+  .sidebar-list a i {
+    font-size: 16px;
+  }
+
+
+  /* -------------------------------------------------------
+     LOGOUT
+  ------------------------------------------------------- */
+
+  .logout {
+    padding: 13px 14px;
+
+    font-size: 14px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .mobile-header {
+    height: 60px;
+
+    padding: 0 12px;
+  }
+
+  .mobile-menu-toggle {
+    width: 39px;
+    height: 39px;
+
+    font-size: 17px;
+  }
+
+  .mobile-header-logo {
+    width: 35px;
+    height: 35px;
+
+    font-size: 15px;
+  }
+
+  .mobile-header-text h2 {
+    font-size: 15px;
+  }
+
+  .mobile-header-text span {
+    font-size: 8px;
+  }
+
+  .sidebar {
+    width: 255px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .sidebar,
+  .sidebar-list a,
+  .logout,
+  .mobile-menu-toggle,
+  .sidebar-close {
+    transition: none;
+  }
+}
+
+
+
+
+/* @media (max-width: 700px) {
+  .employee-page {
+    margin-left: 0;
+    width: 100%;
+    padding-top: 80px;
+  }
+} */

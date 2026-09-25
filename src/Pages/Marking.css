@@ -1,0 +1,956 @@
+:root {
+  --marking-primary: #2563eb;
+  --marking-primary-dark: #1d4ed8;
+  --marking-primary-soft: #eff6ff;
+  --marking-primary-border: #bfdbfe;
+  --marking-navy: #0f172a;
+  --marking-navy-soft: #1e293b;
+  --marking-text: #1e293b;
+  --marking-muted: #64748b;
+  --marking-border: #e2e8f0;
+  --marking-surface: #ffffff;
+  --marking-background: #f4f7fb;
+  --marking-danger: #dc2626;
+  --marking-danger-soft: #fff1f1;
+  --marking-shadow: 0 8px 24px rgba(15, 23, 42, 0.055);
+  --marking-shadow-hover: 0 14px 30px rgba(15, 23, 42, 0.09);
+  --marking-radius: 14px;
+  --marking-transition: 180ms ease;
+}
+
+.marking-page {
+  width: calc(100% - 250px);
+  margin-left: 250px;
+
+  min-height: 100vh;
+  padding: 100px 30px 48px;
+
+  color: var(--marking-text);
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(37, 99, 235, 0.045),
+      transparent 32%
+    ),
+    var(--marking-background);
+
+  animation: markingPageEnter 0.35s ease both;
+}
+
+@keyframes markingPageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.marking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 22px;
+  padding: 22px 24px;
+
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  border-radius: var(--marking-radius);
+
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.035);
+}
+
+.marking-header h1 {
+  margin: 0 0 6px;
+
+  color: var(--marking-navy);
+
+  font-size: clamp(24px, 2.2vw, 28px);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.marking-header p {
+  margin: 0;
+
+  color: var(--marking-muted);
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.marking-header small {
+  display: inline-block;
+  margin-top: 9px;
+
+  color: var(--marking-muted);
+
+  font-size: 12px;
+}
+
+.marking-header small strong {
+  color: var(--marking-primary);
+}
+
+.marking-back-btn {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 11px 17px;
+
+  border: 1px solid var(--marking-primary-border);
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: var(--marking-primary-dark);
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+
+  transition:
+    background var(--marking-transition),
+    border-color var(--marking-transition),
+    transform var(--marking-transition),
+    box-shadow var(--marking-transition);
+}
+
+.marking-back-btn:hover {
+  background: var(--marking-primary-soft);
+  border-color: #93c5fd;
+  box-shadow: 0 5px 12px rgba(37, 99, 235, 0.08);
+  transform: translateY(-1px);
+}
+
+.marking-back-btn:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.28);
+  outline-offset: 2px;
+}
+
+/* =====================================================
+   MESSAGES
+===================================================== */
+
+.marking-message {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 13px 16px;
+
+  border-radius: 10px;
+
+  margin-bottom: 20px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.03);
+
+  animation: markingMessageIn 160ms ease-out;
+}
+
+.marking-message.success {
+  border: 1px solid var(--marking-primary-border);
+
+  background: var(--marking-primary-soft);
+  color: var(--marking-primary-dark);
+}
+
+.marking-message.error {
+  border: 1px solid #f3c1c1;
+
+  background: var(--marking-danger-soft);
+  color: #b42318;
+}
+
+@keyframes markingMessageIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   SUMMARY
+===================================================== */
+
+.marking-summary {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 18px;
+
+  margin-bottom: 22px;
+}
+
+.marking-summary-card {
+  position: relative;
+  overflow: hidden;
+
+  padding: 18px;
+
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: var(--marking-radius);
+
+  background: linear-gradient(145deg, #ffffff, #fbfdff);
+  box-shadow: var(--marking-shadow);
+
+  transition:
+    transform var(--marking-transition),
+    box-shadow var(--marking-transition);
+}
+
+.marking-summary-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0 auto 0 0;
+
+  width: 4px;
+
+  background: #cbd5e1;
+}
+
+.marking-summary-card::after {
+  content: "";
+
+  position: absolute;
+  right: -20px;
+  bottom: -28px;
+
+  width: 85px;
+  height: 85px;
+
+  border-radius: 50%;
+
+  background: rgba(37, 99, 235, 0.04);
+
+  pointer-events: none;
+}
+
+.marking-summary-card.present::before {
+  background: var(--marking-primary);
+}
+
+.marking-summary-card.absent::before {
+  background: var(--marking-danger);
+}
+
+.marking-summary-card.late::before {
+  background: #d97706;
+}
+
+.marking-summary-card.leave::before {
+  background: #7c3aed;
+}
+
+.marking-summary-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--marking-shadow-hover);
+}
+
+.marking-summary-card span {
+  display: block;
+  margin-bottom: 7px;
+
+  color: var(--marking-muted);
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.marking-summary-card strong {
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+
+  color: var(--marking-text);
+}
+
+.marking-summary-card.present strong {
+  color: var(--marking-primary);
+}
+
+.marking-summary-card.absent strong {
+  color: var(--marking-danger);
+}
+
+.marking-summary-card.late strong {
+  color: #d97706;
+}
+
+.marking-summary-card.leave strong {
+  color: #7c3aed;
+}
+
+/* =====================================================
+   PANEL AND TOOLBAR
+===================================================== */
+
+.marking-panel {
+  overflow: hidden;
+
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: var(--marking-radius);
+
+  background: var(--marking-surface);
+  box-shadow: var(--marking-shadow);
+}
+
+.marking-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 18px 22px;
+
+  border-bottom: 1px solid var(--marking-border);
+
+  background: linear-gradient(180deg, #ffffff, #fbfdff);
+}
+
+.marking-search {
+  position: relative;
+
+  width: 350px;
+}
+
+.marking-search i {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #94a3b8;
+}
+
+.marking-search input {
+  width: 100%;
+  height: 44px;
+
+  padding: 0 14px 0 38px;
+
+  border: 1px solid #d7e0eb;
+  border-radius: 10px;
+
+  outline: none;
+
+  background: #f8fafc;
+
+  transition:
+    border-color var(--marking-transition),
+    box-shadow var(--marking-transition),
+    background-color var(--marking-transition);
+}
+
+.marking-search input:hover {
+  border-color: #94a3b8;
+}
+
+.marking-search input:focus {
+  border-color: var(--marking-primary);
+
+  background: #ffffff;
+
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.09);
+}
+
+.marking-date {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.marking-date label {
+  color: #475569;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.marking-date input {
+  height: 44px;
+
+  padding: 0 12px;
+
+  border: 1px solid #d7e0eb;
+  border-radius: 10px;
+
+  outline: none;
+
+  background: #fbfdff;
+
+  transition:
+    border-color var(--marking-transition),
+    box-shadow var(--marking-transition);
+}
+
+.marking-date input:hover {
+  border-color: #94a3b8;
+}
+
+.marking-date input:focus {
+  border-color: var(--marking-primary);
+
+  background: #ffffff;
+
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.09);
+}
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.marking-table-container {
+  width: 100%;
+
+  overflow-x: auto;
+
+  -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f8fafc;
+}
+
+.marking-table-container::-webkit-scrollbar {
+  height: 7px;
+}
+
+.marking-table-container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.marking-table-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.marking-table-container::-webkit-scrollbar-thumb:hover {
+  background: var(--marking-primary);
+}
+
+.marking-table {
+  width: 100%;
+  min-width: 950px;
+
+  border-collapse: collapse;
+}
+
+.marking-table th {
+  padding: 14px 18px;
+
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+
+  color: #f8fafc;
+
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-align: left;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+.marking-table td {
+  padding: 14px 18px;
+
+  border-bottom: 1px solid #edf2f7;
+
+  vertical-align: middle;
+}
+
+.marking-table tbody tr {
+  transition:
+    background-color var(--marking-transition),
+    box-shadow var(--marking-transition);
+}
+
+.marking-table tbody tr:hover {
+  background: #f8fbff;
+  box-shadow: inset 3px 0 0 var(--marking-primary);
+}
+
+.marking-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* =====================================================
+   EMPLOYEE
+===================================================== */
+
+.marking-employee {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  min-width: 205px;
+}
+
+.marking-avatar {
+  width: 38px;
+  height: 38px;
+
+  flex: 0 0 38px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background: linear-gradient(145deg, #eff6ff, #dbeafe);
+  color: var(--marking-primary-dark);
+
+  font-weight: 800;
+
+  box-shadow: inset 0 0 0 1px rgba(29, 78, 216, 0.08);
+}
+
+.marking-employee strong {
+  display: block;
+
+  color: var(--marking-text);
+
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.marking-employee small {
+  display: block;
+  margin-top: 3px;
+
+  max-width: 230px;
+  overflow: hidden;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.marking-employee-id {
+  display: inline-block;
+
+  padding: 5px 9px;
+
+  border: 1px solid var(--marking-border);
+  border-radius: 7px;
+
+  background: #f1f5f9;
+  color: #475569;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =====================================================
+   INPUTS AND STATUS
+===================================================== */
+
+.marking-table select,
+.marking-table input {
+  height: 38px;
+
+  padding: 0 10px;
+
+  border: 1px solid #d5deea;
+  border-radius: 8px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  transition:
+    border-color var(--marking-transition),
+    box-shadow var(--marking-transition),
+    background-color var(--marking-transition);
+}
+
+.marking-table select:hover,
+.marking-table input:hover {
+  border-color: #94a3b8;
+}
+
+.marking-table select:focus,
+.marking-table input:focus {
+  border-color: var(--marking-primary);
+
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.09);
+}
+
+.marking-table select {
+  min-width: 110px;
+}
+
+.marking-table input[type="time"] {
+  width: 110px;
+}
+
+.marking-table input[type="text"] {
+  width: 150px;
+}
+
+.marking-table input:disabled {
+  background: #f1f5f9;
+  color: #94a3b8;
+
+  cursor: not-allowed;
+}
+
+.marking-status-select {
+  min-width: 118px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.marking-status-select.present {
+  background: var(--marking-primary-soft);
+  color: var(--marking-primary-dark);
+}
+
+.marking-status-select.absent {
+  background: var(--marking-danger-soft);
+  color: #b42318;
+}
+
+.marking-status-select.late {
+  background: #fff7ed;
+  color: #b45309;
+}
+
+.marking-status-select.leave {
+  background: #f5f3ff;
+  color: #6d28d9;
+}
+
+/* =====================================================
+   EMPTY STATE AND FOOTER
+===================================================== */
+
+.marking-empty {
+  padding: 60px 20px !important;
+
+  text-align: center;
+
+  color: var(--marking-muted);
+
+  background: #ffffff;
+}
+
+.marking-empty i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 60px;
+  height: 60px;
+
+  margin-bottom: 14px;
+
+  border: 1px solid #dbeafe;
+  border-radius: 50%;
+
+  background: var(--marking-primary-soft);
+  color: var(--marking-primary);
+
+  font-size: 24px;
+}
+
+.marking-empty h3 {
+  margin: 0 0 5px;
+
+  color: #334155;
+}
+
+.marking-empty p {
+  margin: 0;
+
+  font-size: 13px;
+}
+
+.marking-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 17px 22px;
+
+  border-top: 1px solid var(--marking-border);
+
+  background: #fbfdff;
+}
+
+.marking-footer-info {
+  color: var(--marking-muted);
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.marking-footer-actions {
+  display: flex;
+
+  gap: 10px;
+}
+
+.marking-cancel-btn,
+.marking-save-btn {
+  min-height: 44px;
+
+  padding: 0 18px;
+
+  border: none;
+  border-radius: 10px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background var(--marking-transition),
+    background-color var(--marking-transition),
+    transform var(--marking-transition),
+    box-shadow var(--marking-transition);
+}
+
+.marking-cancel-btn {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.marking-cancel-btn:hover:not(:disabled) {
+  background: #e2e8f0;
+  transform: translateY(-1px);
+}
+
+.marking-save-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+
+  box-shadow: 0 5px 14px rgba(37, 99, 235, 0.16);
+}
+
+.marking-save-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.23);
+  transform: translateY(-1px);
+}
+
+.marking-save-btn:disabled,
+.marking-cancel-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.marking-cancel-btn:focus-visible,
+.marking-save-btn:focus-visible,
+.marking-back-btn:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.28);
+  outline-offset: 2px;
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+/* SIDEBAR TABLET — 220PX */
+
+@media (max-width: 1100px) {
+  .marking-page {
+    width: calc(100% - 220px);
+    margin-left: 220px;
+  }
+
+  .marking-header {
+    padding: 20px;
+  }
+
+  .marking-summary {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .marking-summary-card {
+    padding: 16px;
+  }
+
+  .marking-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .marking-search {
+    width: 100%;
+  }
+
+  .marking-date {
+    justify-content: space-between;
+  }
+}
+
+/* SIDEBAR SMALL TABLET — 200PX */
+
+@media (max-width: 850px) {
+  .marking-page {
+    width: calc(100% - 200px);
+    margin-left: 200px;
+  }
+}
+
+/* MOBILE — SIDEBAR HIDDEN — 768PX */
+
+@media (max-width: 768px) {
+  .marking-page {
+    width: 100%;
+    margin-left: 0;
+
+    padding: 84px 15px 30px;
+  }
+
+  .marking-header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 15px;
+
+    border-radius: 12px;
+  }
+
+  .marking-header h1 {
+    font-size: 24px;
+  }
+
+  .marking-back-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .marking-summary {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .marking-summary-card {
+    padding: 15px;
+  }
+
+  .marking-panel {
+    border-radius: 12px;
+  }
+
+  .marking-toolbar {
+    padding: 14px;
+  }
+
+  .marking-date {
+    width: 100%;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .marking-date input {
+    width: 100%;
+  }
+
+  .marking-table th,
+  .marking-table td {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .marking-footer {
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 15px;
+  }
+
+  .marking-footer-actions {
+    width: 100%;
+  }
+
+  .marking-cancel-btn,
+  .marking-save-btn {
+    flex: 1;
+  }
+}
+
+/* SMALL MOBILE — 480PX */
+
+@media (max-width: 480px) {
+  .marking-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .marking-summary-card strong {
+    font-size: 23px;
+  }
+
+  .marking-header h1 {
+    font-size: 21px;
+  }
+
+  .marking-header p {
+    max-width: 100%;
+  }
+
+  .marking-footer-actions {
+    flex-direction: column;
+  }
+}
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .marking-page,
+  .marking-page *,
+  .marking-page *::before,
+  .marking-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
