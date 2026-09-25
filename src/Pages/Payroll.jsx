@@ -255,27 +255,74 @@ function Payroll() {
      PAYROLL INPUT
   ===================================================== */
 
-  const getPayrollInput = (employeeId, month, year) => {
+  const getPayrollInput = (employee, month, year) => {
     const storage = getStorageData(PAYROLL_INPUT_STORAGE_KEY, {});
 
-    const key = `${employeeId}_${month}_${year}`;
+    const employeeIds = [
+      employee?.employeesId,
+      employee?.employeeId,
+      employee?.employeeID,
+      employee?.id,
+      employee,
+    ]
+      .filter((id) => id !== undefined && id !== null && id !== "")
+      .map(String);
 
-    return storage[key] || {};
+    const normalizedMonth = String(month);
+    const normalizedYear = Number(year);
+
+    for (const employeeId of employeeIds) {
+      const keys = [
+        `${employeeId}-${normalizedMonth}-${normalizedYear}`,
+        `${employeeId}_${normalizedMonth}_${normalizedYear}`,
+      ];
+
+      for (const key of keys) {
+        if (storage[key] && typeof storage[key] === "object") {
+          return {
+            allowance: parseMoney(
+              storage[key].allowance ?? storage[key].allowances ?? 0,
+            ),
+            otherDeduction: parseMoney(
+              storage[key].otherDeduction ?? storage[key].otherDeductions ?? 0,
+            ),
+          };
+        }
+      }
+    }
+
+    return { allowance: 0, otherDeduction: 0 };
   };
 
   /* =====================================================
      PAYROLL LOOKUP
   ===================================================== */
 
-  const getEmployeePayroll = (employeeId, month, year) => {
+  const getEmployeePayroll = (employee, month, year) => {
+    const employeeIds = [
+      employee?.employeesId,
+      employee?.employeeId,
+      employee?.employeeID,
+      employee?.id,
+      employee,
+    ]
+      .filter((id) => id !== undefined && id !== null && id !== "")
+      .map(String);
+
     return payrolls.find((payroll) => {
-      const payrollEmployeeId =
-        payroll.employeeId ?? payroll.employeeID ?? payroll.id;
+      const payrollIds = [
+        payroll?.employeesId,
+        payroll?.employeeId,
+        payroll?.employeeID,
+        payroll?.id,
+      ]
+        .filter((id) => id !== undefined && id !== null && id !== "")
+        .map(String);
 
       return (
-        String(payrollEmployeeId) === String(employeeId) &&
+        employeeIds.some((id) => payrollIds.includes(id)) &&
         String(payroll.month) === String(month) &&
-        String(payroll.year) === String(year)
+        Number(payroll.year) === Number(year)
       );
     });
   };
@@ -302,7 +349,13 @@ function Payroll() {
   ===================================================== */
 
   const calculateEmployeePayroll = (employee) => {
-    const input = getPayrollInput(employee.id, selectedMonth, selectedYear);
+    const employeeId =
+      employee.employeesId ??
+      employee.employeeId ??
+      employee.employeeID ??
+      employee.id;
+
+    const input = getPayrollInput(employee, selectedMonth, selectedYear);
 
     const monthlySalary = parseMoney(
       employee.basicSalary ?? employee.monthlySalary ?? employee.salary ?? 0,
@@ -450,7 +503,7 @@ function Payroll() {
 
   const openPayslip = (employee) => {
     const savedPayroll = getEmployeePayroll(
-      employee.id,
+      employee,
       selectedMonth,
       selectedYear,
     );

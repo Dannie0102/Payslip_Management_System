@@ -19,6 +19,10 @@
   --payroll-transition: 180ms ease;
 }
 
+/* =====================================================
+   PAYROLL CONTAINER
+===================================================== */
+
 .payroll-container {
   width: calc(100% - 250px);
   min-height: 100vh;
@@ -32,6 +36,7 @@
       transparent 32%
     ),
     var(--payroll-background);
+
   color: var(--payroll-text);
 }
 
@@ -47,7 +52,6 @@
   justify-content: space-between;
 
   gap: 24px;
-
   margin-bottom: 22px;
   padding: 22px 24px;
 
@@ -55,6 +59,7 @@
   border-radius: var(--payroll-radius);
 
   background: rgba(255, 255, 255, 0.92);
+
   box-shadow: 0 4px 18px rgba(15, 23, 42, 0.035);
 }
 
@@ -80,13 +85,13 @@
 
 .payroll-header-total {
   min-width: 230px;
-
   padding: 17px 20px;
 
   border: 1px solid rgba(226, 232, 240, 0.95);
   border-radius: var(--payroll-radius);
 
   background: linear-gradient(145deg, #ffffff, #fbfdff);
+
   box-shadow: var(--payroll-shadow);
 
   transition:
@@ -104,6 +109,7 @@
 .payroll-header-total span,
 .rate-card span {
   display: block;
+
   margin-bottom: 6px;
 
   color: var(--payroll-muted);
@@ -127,7 +133,6 @@
 
 .payroll-controls {
   width: 100%;
-
   margin-bottom: 18px;
   padding: 18px 20px;
 
@@ -135,6 +140,7 @@
   border-radius: var(--payroll-radius);
 
   background: linear-gradient(180deg, #ffffff, #fbfdff);
+
   box-shadow: var(--payroll-shadow);
 }
 
@@ -174,7 +180,6 @@
   padding: 0 12px;
 
   color: #0f172a;
-
   background: #fbfdff;
 
   border: 1px solid #d5deea;
@@ -230,20 +235,23 @@
     background-color var(--payroll-transition);
 }
 
-
 .payroll-search:hover {
   border-color: #93c5fd;
 }
 
 .payroll-search:focus-within {
   border-color: var(--payroll-primary);
+
   background: #ffffff;
+
   box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.09);
 }
 
 .payroll-search > i {
   margin-left: 13px;
+
   color: #94a3b8;
+
   font-size: 13px;
 }
 
@@ -257,6 +265,7 @@
   outline: 0;
 
   background: transparent;
+
   color: #0f172a;
 
   font-size: 13px;
@@ -292,6 +301,7 @@
   border-radius: 50%;
 
   background: #f1f5f9;
+
   color: #64748b;
 
   font-size: 16px;
@@ -335,13 +345,17 @@
 
 .payroll-success {
   border: 1px solid #bbf7d0;
+
   background: var(--payroll-success-soft);
+
   color: #15803d;
 }
 
 .payroll-error {
   border: 1px solid #fecaca;
+
   background: var(--payroll-danger-soft);
+
   color: #b91c1c;
 }
 
@@ -358,6 +372,7 @@
   border-radius: 50%;
 
   background: transparent;
+
   color: inherit;
 
   font-size: 17px;
@@ -404,6 +419,7 @@
 
 .rate-card {
   position: relative;
+
   overflow: hidden;
 
   min-width: 175px;
@@ -414,6 +430,7 @@
   border-radius: 12px;
 
   background: linear-gradient(145deg, #ffffff, #fbfdff);
+
   box-shadow: var(--payroll-shadow);
 
   transition:
@@ -426,6 +443,7 @@
   content: "";
 
   position: absolute;
+
   right: -20px;
   bottom: -28px;
 
@@ -441,12 +459,15 @@
 
 .rate-card:hover {
   border-color: #bfdbfe;
+
   box-shadow: var(--payroll-shadow-hover);
+
   transform: translateY(-2px);
 }
 
 .rate-card strong {
   display: block;
+
   margin-bottom: 4px;
 
   color: var(--payroll-primary);
@@ -497,7 +518,6 @@
   transition:
     transform var(--payroll-transition),
     background-color var(--payroll-transition),
-    background var(--payroll-transition),
     border-color var(--payroll-transition),
     box-shadow var(--payroll-transition);
 }
@@ -512,6 +532,7 @@
   border-radius: 10px;
 
   background: linear-gradient(135deg, #2563eb, #1d4ed8);
+
   color: #ffffff;
 
   font-size: 13px;
@@ -522,7 +543,9 @@
 .generate-payroll-btn:hover,
 .payslip-print-btn:hover {
   background: linear-gradient(135deg, #1d4ed8, #1e40af);
+
   box-shadow: 0 8px 18px rgba(37, 99, 235, 0.23);
+
   transform: translateY(-1px);
 }
 
@@ -535,6 +558,7 @@
   border-radius: 10px;
 
   background: var(--payroll-primary-soft);
+
   color: #1d4ed8;
 
   font-size: 13px;
@@ -542,7 +566,9 @@
 
 .generate-specific-btn:hover {
   background: #dbeafe;
+
   border-color: #93c5fd;
+
   transform: translateY(-1px);
 }
 
@@ -561,6 +587,7 @@
 .form-group select:focus-visible,
 .payroll-search input:focus-visible {
   outline: 3px solid rgba(37, 99, 235, 0.28);
+
   outline-offset: 2px;
 }
 
@@ -570,17 +597,20 @@
 
 .payroll-table-wrapper {
   width: 100%;
+
   overflow: hidden;
 
   border: 1px solid rgba(226, 232, 240, 0.95);
   border-radius: var(--payroll-radius);
 
   background: var(--payroll-surface);
+
   box-shadow: var(--payroll-shadow);
 }
 
 .table-responsive {
   width: 100%;
+
   overflow-x: auto;
 
   -webkit-overflow-scrolling: touch;
@@ -599,6 +629,7 @@
 
 .table-responsive::-webkit-scrollbar-thumb {
   background: #cbd5e1;
+
   border-radius: 10px;
 }
 
@@ -608,6 +639,7 @@
 
 .payroll-table {
   width: 100%;
+
   min-width: 1250px;
 
   border-collapse: collapse;
@@ -628,8 +660,11 @@
 
   font-size: 10px;
   font-weight: 800;
+
   letter-spacing: 0.035em;
+
   text-align: left;
+
   text-transform: uppercase;
 
   white-space: nowrap;
@@ -657,6 +692,7 @@
 
 .payroll-table tbody tr:hover {
   background: #f8fbff;
+
   box-shadow: inset 3px 0 0 var(--payroll-primary);
 }
 
@@ -689,6 +725,7 @@
   border-radius: 50%;
 
   background: linear-gradient(145deg, #eff6ff, #dbeafe);
+
   color: #1d4ed8;
 
   font-size: 13px;
@@ -723,16 +760,19 @@
 
 .ssnit-value {
   color: #475569;
+
   font-weight: 600;
 }
 
 .tax-value {
   color: var(--payroll-danger);
+
   font-weight: 700;
 }
 
 .net-salary {
   color: var(--payroll-primary);
+
   font-weight: 800;
 }
 
@@ -749,6 +789,7 @@
   border-radius: 9px;
 
   background: var(--payroll-primary-soft);
+
   color: #1d4ed8;
 
   font-size: 11px;
@@ -756,8 +797,11 @@
 
 .view-payslip-btn:hover {
   background: #dbeafe;
+
   border-color: #93c5fd;
+
   transform: translateY(-1px);
+
   box-shadow: 0 4px 9px rgba(15, 23, 42, 0.08);
 }
 
@@ -796,6 +840,7 @@
 
   border: 3px solid #dbeafe;
   border-top-color: var(--payroll-primary);
+
   border-radius: 50%;
 
   animation: payroll-spin 0.8s linear infinite;
@@ -821,6 +866,7 @@
   border-radius: 50%;
 
   background: var(--payroll-primary-soft);
+
   color: var(--payroll-primary);
 
   font-size: 26px;
@@ -832,6 +878,7 @@
   color: var(--payroll-navy);
 
   font-size: 18px;
+
   letter-spacing: -0.2px;
 }
 
@@ -883,6 +930,7 @@
   border-radius: 9px;
 
   background: #ffffff;
+
   color: #475569;
 
   font-size: 12px;
@@ -891,13 +939,17 @@
 
 .pagination-buttons button:hover:not(:disabled) {
   background: var(--payroll-primary-soft);
+
   border-color: #bfdbfe;
+
   color: var(--payroll-primary);
 }
 
 .pagination-buttons button.active {
   background: var(--payroll-primary);
+
   border-color: var(--payroll-primary);
+
   color: #ffffff;
 
   box-shadow: 0 4px 10px rgba(37, 99, 235, 0.18);
@@ -905,6 +957,7 @@
 
 .pagination-buttons button:disabled {
   opacity: 0.45;
+
   cursor: not-allowed;
 }
 
@@ -914,6 +967,7 @@
 
 .payslip-modal-root {
   position: fixed;
+
   inset: 0;
 
   z-index: 3000;
@@ -925,6 +979,7 @@
   padding: 24px;
 
   background: rgba(15, 23, 42, 0.64);
+
   backdrop-filter: blur(7px);
 
   animation: payslipOverlayIn 160ms ease-out;
@@ -932,14 +987,17 @@
 
 .payslip-modal-box {
   width: min(820px, 100%);
+
   max-height: 92vh;
 
   overflow-y: auto;
 
   border: 1px solid rgba(255, 255, 255, 0.4);
+
   border-radius: 18px;
 
   background: #ffffff;
+
   box-shadow: 0 30px 80px rgba(15, 23, 42, 0.3);
 
   animation: payslipModalIn 190ms ease-out;
@@ -955,6 +1013,7 @@
 
 .payslip-modal-box::-webkit-scrollbar-thumb {
   background: #cbd5e1;
+
   border-radius: 10px;
 }
 
@@ -966,6 +1025,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -974,10 +1034,13 @@
 @keyframes payslipModalIn {
   from {
     opacity: 0;
+
     transform: translateY(12px) scale(0.985);
   }
+
   to {
     opacity: 1;
+
     transform: translateY(0) scale(1);
   }
 }
@@ -992,6 +1055,7 @@
   padding: 25px 28px;
 
   background: linear-gradient(135deg, #0f172a, #1e293b);
+
   border-bottom: 1px solid #1e293b;
 }
 
@@ -1002,6 +1066,7 @@
 
   font-size: 21px;
   font-weight: 800;
+
   letter-spacing: -0.35px;
 }
 
@@ -1024,9 +1089,11 @@
   flex-shrink: 0;
 
   border: 1px solid rgba(255, 255, 255, 0.08);
+
   border-radius: 9px;
 
   background: rgba(255, 255, 255, 0.08);
+
   color: #ffffff;
 
   font-size: 22px;
@@ -1040,44 +1107,51 @@
 
 .payslip-modal-close:hover {
   background: #ffffff;
+
   color: var(--payroll-danger);
 }
 
 /* =====================================================
    PAYSLIP EMPLOYEE INFORMATION
-   (kept for compatibility — unused by the current
-   salary-slip layout, safe to leave in)
+   KEPT FOR COMPATIBILITY
 ===================================================== */
 
 .payslip-employee-info {
   display: grid;
+
   grid-template-columns: repeat(4, minmax(0, 1fr));
 
   gap: 12px;
 
   margin: 22px 28px 0;
+
   padding: 16px;
 
   background: #f8fafc;
 
   border: 1px solid var(--payroll-border);
+
   border-radius: 10px;
 }
 
 .payslip-employee-info span {
   display: block;
+
   margin-bottom: 5px;
 
   color: #64748b;
 
   font-size: 10px;
   font-weight: 800;
+
   letter-spacing: 0.04em;
+
   text-transform: uppercase;
 }
 
 .payslip-employee-info strong {
   display: block;
+
   overflow: hidden;
 
   color: #0f172a;
@@ -1096,11 +1170,13 @@
   gap: 15px;
 
   margin: 16px 28px 0;
+
   padding: 13px 15px;
 
   background: var(--payroll-primary-soft);
 
   border: 1px solid #bfdbfe;
+
   border-radius: 8px;
 }
 
@@ -1154,16 +1230,19 @@
 
 .payslip-total {
   margin-top: 7px;
+
   padding: 13px 14px;
 
   background: var(--payroll-primary-soft);
 
   border: 1px solid #bfdbfe;
+
   border-radius: 9px;
 }
 
 .payslip-total span {
   color: #334155;
+
   font-weight: 700;
 }
 
@@ -1175,9 +1254,11 @@
   gap: 20px;
 
   margin: 24px 28px;
+
   padding: 20px;
 
   background: linear-gradient(135deg, #2563eb, #1d4ed8);
+
   color: #ffffff;
 
   border-radius: 11px;
@@ -1188,6 +1269,7 @@
 .payslip-net span {
   font-size: 13px;
   font-weight: 800;
+
   letter-spacing: 0.04em;
 }
 
@@ -1218,9 +1300,11 @@
   padding: 0 17px;
 
   border: 1px solid #cbd5e1;
+
   border-radius: 10px;
 
   background: #ffffff;
+
   color: #475569;
 
   font-size: 13px;
@@ -1228,7 +1312,9 @@
 
 .payslip-close-btn:hover {
   background: #f8fafc;
+
   border-color: #94a3b8;
+
   color: #0f172a;
 }
 
@@ -1237,18 +1323,71 @@
 ===================================================== */
 
 .salary-slip {
+  position: relative;
+
   width: 100%;
   max-width: 760px;
 
   margin: 0 auto;
+
   padding: 45px 50px 55px;
 
+  overflow: hidden;
+
   background: #ffffff;
+
   color: #222222;
 
   font-family: Georgia, "Times New Roman", serif;
+
   font-size: 18px;
+
   line-height: 1.55;
+
+  isolation: isolate;
+}
+
+/* =====================================================
+   PAYSLIP WATERMARK
+===================================================== */
+
+.salary-slip::before {
+  content: "PEADATO GROUP LIMITED";
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%) rotate(-35deg);
+
+  color: rgba(37, 99, 235, 0.075);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 58px;
+
+  font-weight: 800;
+
+  letter-spacing: 4px;
+
+  white-space: nowrap;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  z-index: 0;
+}
+
+/*
+   Keep every payslip element above the watermark.
+*/
+
+.salary-slip > * {
+  position: relative;
+
+  z-index: 1;
 }
 
 .salary-slip-title {
@@ -1261,6 +1400,7 @@
   display: inline-block;
 
   margin: 0;
+
   padding-bottom: 3px;
 
   border-bottom: 2px solid #222222;
@@ -1268,8 +1408,11 @@
   color: #222222;
 
   font-family: Georgia, "Times New Roman", serif;
+
   font-size: 31px;
+
   font-weight: 700;
+
   letter-spacing: 0.3px;
 }
 
@@ -1288,6 +1431,7 @@
   color: #222222;
 
   font-size: 18px;
+
   line-height: 1.45;
 }
 
@@ -1318,8 +1462,11 @@
   color: #222222;
 
   font-family: Georgia, "Times New Roman", serif;
+
   font-size: 21px;
+
   font-weight: 700;
+
   text-decoration: underline;
 }
 
@@ -1341,6 +1488,7 @@
 
 .salary-row strong {
   font-weight: 700;
+
   white-space: nowrap;
 }
 
@@ -1363,11 +1511,13 @@
 
 .salary-net span {
   font-weight: 700;
+
   text-decoration: underline;
 }
 
 .salary-net strong {
   font-weight: 700;
+
   white-space: nowrap;
 }
 
@@ -1403,6 +1553,7 @@
   color: #222222;
 
   font-size: 16px;
+
   font-style: italic;
 }
 
@@ -1421,12 +1572,14 @@
 @media print {
   @page {
     size: A4 portrait;
+
     margin: 12mm;
   }
 
   html,
   body {
     width: 100%;
+
     min-height: 100%;
 
     margin: 0;
@@ -1457,9 +1610,11 @@
 
   .payroll-container {
     width: 100%;
+
     min-height: 0;
 
     margin: 0;
+
     padding: 0;
 
     background: #ffffff !important;
@@ -1471,40 +1626,99 @@
     display: block;
 
     width: 100%;
+
     height: auto;
 
     padding: 0;
 
     background: #ffffff !important;
+
     backdrop-filter: none;
   }
 
   .payslip-modal-box {
     width: 100%;
+
     max-width: none;
+
     max-height: none;
 
     overflow: visible;
 
     border: 0;
+
     border-radius: 0;
 
     box-shadow: none;
+
     animation: none;
   }
 
   .salary-slip {
+    position: relative;
+
     width: 100%;
+
     max-width: none;
 
     margin: 0;
+
     padding: 10mm 8mm 12mm;
 
-    background: #ffffff;
+    overflow: hidden;
+
+    background: #ffffff !important;
+
     color: #222222;
 
     box-shadow: none;
+
     border: none;
+
+    isolation: isolate;
+
+    -webkit-print-color-adjust: exact;
+
+    print-color-adjust: exact;
+  }
+
+  /* =====================================================
+     PRINT WATERMARK
+  ===================================================== */
+
+  .salary-slip::before {
+    content: "PEADATO GROUP LIMITED";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%) rotate(-35deg);
+
+    color: rgba(37, 99, 235, 0.075) !important;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 58px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+
+    white-space: nowrap;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    z-index: 0;
+  }
+
+  .salary-slip > * {
+    position: relative;
+
+    z-index: 1;
   }
 
   .salary-slip-title {
@@ -1544,7 +1758,9 @@
    RESPONSIVE DESIGN
 ===================================================== */
 
-/* TABLET — 1200PX */
+/* =====================================================
+   TABLET — 1200PX
+===================================================== */
 
 @media (max-width: 1200px) {
   .payroll-rate-cards {
@@ -1552,11 +1768,14 @@
   }
 }
 
-/* SIDEBAR TABLET — 1100PX */
+/* =====================================================
+   SIDEBAR TABLET — 1100PX
+===================================================== */
 
 @media (max-width: 1100px) {
   .payroll-container {
     width: calc(100% - 220px);
+
     margin-left: 220px;
 
     padding-right: 22px;
@@ -1573,6 +1792,7 @@
 
   .payroll-rate-info {
     align-items: flex-start;
+
     flex-direction: column;
   }
 
@@ -1585,20 +1805,26 @@
   }
 }
 
-/* SMALL TABLET — 850PX */
+/* =====================================================
+   SMALL TABLET — 850PX
+===================================================== */
 
 @media (max-width: 850px) {
   .payroll-container {
     width: calc(100% - 200px);
+
     margin-left: 200px;
   }
 }
 
-/* TABLET LAYOUT — 900PX */
+/* =====================================================
+   TABLET LAYOUT — 900PX
+===================================================== */
 
 @media (max-width: 900px) {
   .payroll-page-header {
     align-items: flex-start;
+
     flex-direction: column;
   }
 
@@ -1612,13 +1838,16 @@
 
   .payroll-search {
     width: 100%;
+
     min-width: 100%;
 
     margin-left: 0;
   }
 }
 
-/* MOBILE — SIDEBAR HIDDEN — 700PX */
+/* =====================================================
+   MOBILE — SIDEBAR HIDDEN — 700PX
+===================================================== */
 
 @media (max-width: 700px) {
   .payroll-container {
@@ -1639,7 +1868,9 @@
   }
 }
 
-/* SMALL MOBILE — 650PX */
+/* =====================================================
+   SMALL MOBILE — 650PX
+===================================================== */
 
 @media (max-width: 650px) {
   .payroll-container {
@@ -1652,6 +1883,7 @@
 
   .payroll-period {
     display: grid;
+
     grid-template-columns: 1fr 1fr;
 
     gap: 12px;
@@ -1659,6 +1891,7 @@
 
   .form-group select {
     width: 100%;
+
     min-width: 0;
   }
 
@@ -1668,6 +1901,7 @@
 
   .payroll-rate-cards {
     display: grid;
+
     grid-template-columns: 1fr 1fr;
 
     width: 100%;
@@ -1681,6 +1915,7 @@
     width: 100%;
 
     display: flex;
+
     flex-direction: row;
   }
 
@@ -1696,15 +1931,19 @@
 
   .pagination {
     align-items: flex-start;
+
     flex-direction: column;
   }
 
   .pagination-buttons {
     width: 100%;
+
     overflow-x: auto;
   }
 
-  /* PAYSLIP MOBILE */
+  /* =====================================================
+     PAYSLIP MOBILE
+  ===================================================== */
 
   .payslip-modal-root {
     padding: 10px;
@@ -1712,6 +1951,7 @@
 
   .payslip-modal-box {
     max-height: 96vh;
+
     border-radius: 12px;
   }
 
@@ -1725,6 +1965,7 @@
 
   .payslip-employee-info {
     margin: 16px 18px 0;
+
     padding: 13px;
   }
 
@@ -1748,7 +1989,9 @@
     padding-left: 18px;
   }
 
-  /* SIMPLE SALARY SLIP MOBILE */
+  /* =====================================================
+     SIMPLE SALARY SLIP MOBILE
+  ===================================================== */
 
   .salary-slip {
     padding: 30px 24px 40px;
@@ -1773,9 +2016,20 @@
   .salary-net {
     font-size: 20px;
   }
+
+  /* MOBILE WATERMARK */
+  .salary-slip::before {
+    font-size: 42px;
+
+    letter-spacing: 3px;
+
+    transform: translate(-50%, -50%) rotate(-35deg);
+  }
 }
 
-/* VERY SMALL MOBILE — 480PX */
+/* =====================================================
+   VERY SMALL MOBILE — 480PX
+===================================================== */
 
 @media (max-width: 480px) {
   .payroll-rate-cards {
@@ -1784,6 +2038,7 @@
 
   .payroll-actions {
     align-items: stretch;
+
     flex-direction: column;
   }
 
@@ -1800,6 +2055,7 @@
   .payslip-row,
   .payslip-net {
     align-items: flex-start;
+
     flex-direction: column;
   }
 
@@ -1812,10 +2068,13 @@
     width: 100%;
   }
 
-  /* SIMPLE SALARY SLIP */
+  /* =====================================================
+     SIMPLE SALARY SLIP
+  ===================================================== */
 
   .salary-slip {
     padding: 25px 18px 35px;
+
     font-size: 16px;
   }
 
@@ -1829,9 +2088,11 @@
 
   .salary-info-line {
     align-items: flex-start;
+
     flex-direction: column;
 
     gap: 2px;
+
     margin-bottom: 14px;
 
     font-size: 16px;
@@ -1839,6 +2100,7 @@
 
   .salary-row {
     align-items: flex-start;
+
     flex-direction: column;
 
     gap: 3px;
@@ -1856,6 +2118,7 @@
 
   .salary-net {
     align-items: flex-start;
+
     flex-direction: column;
 
     gap: 5px;
@@ -1869,6 +2132,7 @@
 
   .salary-signature {
     align-items: flex-start;
+
     flex-direction: column;
 
     gap: 8px;
@@ -1883,15 +2147,29 @@
   .salary-note {
     font-size: 14px;
   }
+
+  /* VERY SMALL WATERMARK */
+  .salary-slip::before {
+    font-size: 30px;
+
+    letter-spacing: 2px;
+  }
 }
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
 
 @media (prefers-reduced-motion: reduce) {
   .payroll-container *,
   .payroll-container *::before,
   .payroll-container *::after {
     animation-duration: 0.01ms !important;
+
     animation-iteration-count: 1 !important;
+
     scroll-behavior: auto !important;
+
     transition-duration: 0.01ms !important;
   }
 }
