@@ -1,0 +1,352 @@
+:root {
+  --notfound-primary: #2563eb;
+  --notfound-primary-dark: #1d4ed8;
+  --notfound-primary-soft: #eff6ff;
+  --notfound-navy: #0f172a;
+  --notfound-muted: #64748b;
+  --notfound-border: #e2e8f0;
+  --notfound-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+  --notfound-radius: 18px;
+  --notfound-transition: 200ms ease;
+}
+
+.not-found-page {
+  min-height: 100vh;
+
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 30px;
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(37, 99, 235, 0.05),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(37, 99, 235, 0.04),
+      transparent 40%
+    ),
+    #f4f7fb;
+
+  color: var(--notfound-navy);
+}
+
+/* =========================================================
+   NOT FOUND CARD
+========================================================= */
+
+.not-found-card {
+  position: relative;
+  overflow: hidden;
+
+  width: 100%;
+
+  max-width: 520px;
+
+  padding: 50px 40px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+
+  background: linear-gradient(145deg, #ffffff, #fbfdff);
+
+  border: 1px solid rgba(226, 232, 240, 0.95);
+
+  border-radius: var(--notfound-radius);
+
+  box-shadow: var(--notfound-shadow);
+
+  animation: notFoundCardIn 260ms ease-out;
+}
+
+.not-found-card::after {
+  content: "";
+
+  position: absolute;
+  right: -50px;
+  top: -60px;
+
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+
+  background: rgba(37, 99, 235, 0.045);
+
+  pointer-events: none;
+}
+
+@keyframes notFoundCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.not-found-icon {
+  position: relative;
+  z-index: 1;
+
+  width: 75px;
+
+  height: 75px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid #dbeafe;
+
+  border-radius: 50%;
+
+  background: linear-gradient(145deg, #eff6ff, #dbeafe);
+
+  color: var(--notfound-primary);
+
+  font-size: 30px;
+
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.12);
+}
+
+/* =========================================================
+   404 NUMBER
+========================================================= */
+
+.not-found-card h1 {
+  position: relative;
+  z-index: 1;
+
+  margin: 0;
+
+  color: var(--notfound-primary);
+
+  font-size: 88px;
+
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: -4px;
+}
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.not-found-card h2 {
+  position: relative;
+  z-index: 1;
+
+  margin: 15px 0 10px;
+
+  color: var(--notfound-navy);
+
+  font-size: 28px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.4px;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.not-found-card p {
+  position: relative;
+  z-index: 1;
+
+  max-width: 400px;
+
+  margin: 0 auto 30px;
+
+  color: var(--notfound-muted);
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.not-found-button {
+  position: relative;
+  z-index: 1;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  min-height: 46px;
+
+  padding: 0 22px;
+
+  border: 1px solid var(--notfound-primary);
+
+  border-radius: 10px;
+
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 14px rgba(37, 99, 235, 0.2);
+
+  transition:
+    background var(--notfound-transition),
+    transform var(--notfound-transition),
+    box-shadow var(--notfound-transition);
+}
+
+/* =========================================================
+   BUTTON HOVER
+========================================================= */
+
+.not-found-button:hover {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.28);
+}
+
+/* =========================================================
+   BUTTON ACTIVE
+========================================================= */
+
+.not-found-button:active {
+  transform: translateY(0);
+
+  box-shadow: 0 3px 8px rgba(37, 99, 235, 0.18);
+}
+
+/* =========================================================
+   BUTTON ICON
+========================================================= */
+
+.not-found-button i {
+  font-size: 13px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+  .not-found-page {
+    padding: 20px;
+  }
+
+  .not-found-card {
+    padding: 40px 25px;
+
+    border-radius: 15px;
+  }
+
+  .not-found-card h1 {
+    font-size: 72px;
+  }
+
+  .not-found-card h2 {
+    font-size: 24px;
+  }
+
+  .not-found-card p {
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+  .not-found-page {
+    padding: 15px;
+  }
+
+  .not-found-card {
+    padding: 35px 20px;
+  }
+
+  .not-found-icon {
+    width: 65px;
+
+    height: 65px;
+
+    font-size: 25px;
+  }
+
+  .not-found-card h1 {
+    font-size: 62px;
+  }
+
+  .not-found-card h2 {
+    font-size: 21px;
+  }
+
+  .not-found-button {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.not-found-button:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.28);
+
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .not-found-page,
+  .not-found-card,
+  .not-found-button {
+    animation: none;
+    transition: none;
+  }
+
+  .not-found-button:hover {
+    transform: none;
+  }
+}

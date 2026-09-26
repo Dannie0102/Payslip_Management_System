@@ -146,7 +146,7 @@
 
 .payroll-period {
   display: flex;
-  align-items: flex-end;
+  align-items: last baseline;
 
   gap: 14px;
 }

@@ -1551,7 +1551,7 @@ button:disabled {
     width: calc(100% - 220px);
     margin-left: 220px;
 
-    padding: 25px 20px 40px;
+    padding: 100px 20px 40px;
   }
 
   .payslip-page-header {
@@ -1580,7 +1580,7 @@ button:disabled {
     width: calc(100% - 200px);
     margin-left: 200px;
 
-    padding: 20px 15px 35px;
+    padding: 100px 15px 35px;
   }
 
   .payslip-page-header h1 {
@@ -1639,7 +1639,7 @@ button:disabled {
     margin-left: 0;
     width: 100%;
 
-    padding-top: 82px;
+    padding-top: 100px;
   }
 
   /* HEADER */

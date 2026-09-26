@@ -313,9 +313,24 @@ const Dashboard = () => {
     const employeeId =
       employee.employeesId ?? employee.employeeId ?? employee.id;
 
-    const inputKey = `${employee.id}_${month}_${year}`;
+    const employeeIds = [
+      employee?.employeesId,
+      employee?.employeeId,
+      employee?.employeeID,
+      employee?.id,
+    ]
+      .filter((id) => id !== undefined && id !== null && id !== "")
+      .map(String);
 
-    const input = payrollInputs[inputKey] || {};
+    const inputKeys = employeeIds.flatMap((id) => [
+      `${id}-${month}-${year}`,
+      `${id}_${month}_${year}`,
+    ]);
+
+    const input = inputKeys.reduce((found, key) => {
+      if (found && Object.keys(found).length > 0) return found;
+      return payrollInputs[key] || {};
+    }, {});
 
     const monthlySalary = parseMoney(
       employee.basicSalary ?? employee.monthlySalary ?? employee.salary ?? 0,
@@ -330,13 +345,18 @@ const Dashboard = () => {
         ? `${Number(year)}-${String(monthIndex + 1).padStart(2, "0")}`
         : "";
 
-    const employeeIds = [employee.employeesId, employee.employeeId, employee.id]
+    const attendanceEmployeeIds = [
+      employee.employeesId,
+      employee.employeeId,
+      employee.employeeID,
+      employee.id,
+    ]
       .filter((id) => id !== undefined && id !== null)
       .map(String);
 
     const monthlyAttendance = attendance.filter(
       (record) =>
-        employeeIds.includes(String(record.employeeId)) &&
+        attendanceEmployeeIds.includes(String(record.employeeId)) &&
         typeof record.date === "string" &&
         record.date.startsWith(attendanceMonth),
     );
@@ -873,7 +893,6 @@ const Dashboard = () => {
           </div>
         </button>
       </div>
-
 
       <div className="dashboard-grid two">
         {/* NET SALARY CHART */}

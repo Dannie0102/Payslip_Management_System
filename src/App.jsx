@@ -16,6 +16,7 @@ import Attendance from "./Pages/Attendance";
 import Payroll from "./Pages/Payroll";
 import Payslip from "./Pages/Payslip";
 import Marking from "./Pages/Marking";
+import NotFound from "./Pages/NotFound";
 
 // Authentication
 import Login from "./login/Login";
@@ -97,10 +98,11 @@ const App = () => {
       {/* =========================
           UNKNOWN ROUTES
       ========================== */}
-      <Route
+      {/* <Route
         path="*"
         element={<Navigate to={isLoggedIn ? "/" : "/login"} replace />}
-      />
+      /> */}
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };

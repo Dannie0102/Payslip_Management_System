@@ -1,16 +1,3 @@
-/* =====================================================
-   EMPLOYEE DETAILS PAGE — PREMIUM NAVY + BLUE UI/UX
-   Matches the design system used in employees.css,
-   Payroll.css, Dashboard.css, Payslip.css, Marking.css
-===================================================== */
-
-.employee-details-page,
-.employee-details-page *,
-.employee-details-page *::before,
-.employee-details-page *::after {
-  box-sizing: border-box;
-}
-
 :root {
   --details-primary: #2563eb;
   --details-primary-dark: #1d4ed8;

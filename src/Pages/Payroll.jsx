@@ -640,7 +640,6 @@ function Payroll() {
               ))}
             </select>
           </div>
-
           <div className="form-group">
             <label htmlFor="payroll-year">Year</label>
 
